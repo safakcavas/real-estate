@@ -1,5 +1,21 @@
-import '@/styles/globals.css'
+// import '@/styles/globals.css'
+import { ChakraProvider } from "@chakra-ui/react"
+import Router from "next/router";
+import NProgress from "nprogress";
+import Head from "next/head";
 
+import Layout from "./components/Layout";
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+    <Head>
+
+    </Head>
+    <ChakraProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>    
+    </>
+  )
 }
